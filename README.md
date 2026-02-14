@@ -130,16 +130,6 @@ The generated PDF maintains:
 
 ---
 
-## 🎯 Purpose
-
-This repository was created as part of the **IronPDF Writing Contest** to showcase:
-
-- A real-world rendering issue  
-- A practical engineering solution  
-- Reliable HTML-to-PDF generation  
-
----
-
 ## 🏷️ Tags
 
 `ironpdf` `dotnet` `html-to-pdf` `pdf-generation` `rowspan-fix` `custom-font`
