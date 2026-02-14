@@ -63,3 +63,92 @@ The project also demonstrates how to embed custom fonts into PDFs using IronPDF 
 
 ## 📂 Project Structure
 
+IronPdfMVC
+│
+├── Controllers
+│   └── HomeController.cs
+│
+├── Enums
+│   └── RowspanOutput.cs
+│
+├── Factories
+│   └── InvoicePdfFactory.cs
+│
+├── Helpers
+│   ├── EnumExtensions.cs
+│   └── RowSpanExpander.cs   // Core logic that fixes rowspan misalignment
+│
+├── Models
+│   ├── ErrorViewModel.cs
+│   ├── InvoicePdfViewModel.cs
+│   └── PrintModel.cs
+│
+├── Views
+│   ├── Home
+│   │   ├── Index.cshtml
+│   │   └── Privacy.cshtml
+│   │
+│   └── Shared
+│       ├── _ViewImports.cshtml
+│       └── _ViewStart.cshtml
+│
+├── wwwroot
+│
+├── appsettings.json
+├── Program.cs
+│
+├── Raw_Rowspan.pdf        // PDF generated without fix
+├── Fixed_Rowspan.pdf      // PDF generated after applying rowspan fix
+
+
+---
+
+## 🚀 How It Works
+
+1. HTML is prepared for rendering  
+2. Rowspan structures are normalized  
+3. Custom fonts are embedded  
+4. IronPDF generates the final PDF  
+
+---
+
+## 📸 Output
+
+The generated PDF maintains:
+
+✔ Correct table alignment  
+✔ Proper borders  
+✔ Embedded custom fonts  
+
+---
+
+## 📖 Use Cases
+
+- Reports
+- Invoices
+- Data tables
+- Branded documents
+
+---
+
+## 🎯 Purpose
+
+This repository was created as part of the **IronPDF Writing Contest** to showcase:
+
+- A real-world rendering issue  
+- A practical engineering solution  
+- Reliable HTML-to-PDF generation  
+
+---
+
+## 🏷️ Tags
+
+`ironpdf` `dotnet` `html-to-pdf` `pdf-generation` `rowspan-fix` `custom-font`
+
+---
+
+## 📄 License
+
+MIT
+
+
