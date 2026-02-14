@@ -1,0 +1,55 @@
+﻿@model PrintModel
+
+@using IronPdfMVC.Enums
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="text-center mt-5">
+    <form method="post" asp-action="PrintPdf" target="_blank">
+        <div class="form-group">
+            <h3>Select output</h3>
+            @foreach (var options in Model.RowspanOutputOptions)
+            {
+                <input type="radio" asp-for="@Model.RowspanOutput" id="@options.Value" value="@options.Value" />
+                <label for="@options.Value">@options.Text</label>
+            }
+        </div>
+        <div class="form-group pt-3">
+            <h3>Use custom font</h3>
+            <label for="@Model.UseCustomFont">Use custom font: </label>
+            <input type="checkbox" asp-for="@Model.UseCustomFont" />
+        </div>
+        <div class="form-group pt-3">
+            <h3>Select font</h3>
+            @foreach (var fontname in Model.CustomFonts)
+            {
+                <input type="radio" asp-for="@Model.SelectedFont" id="@fontname" value="@fontname" />
+                <label for="@fontname">@fontname</label>
+            }
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Print Pdf</button>
+    </form>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var useCustomFontCheckbox = document.getElementById('UseCustomFont');
+        var fontRadios = document.querySelectorAll('input[name="SelectedFont"]');
+        function toggleFontSelection() {
+            var useCustomFont = useCustomFontCheckbox.checked;
+            fontRadios.forEach(function (radio) {
+                radio.disabled = !useCustomFont;
+            });
+        }
+        useCustomFontCheckbox.addEventListener('change', toggleFontSelection);
+        toggleFontSelection(); // Initial call to set the correct state on page load
+    });
+</script>
+
