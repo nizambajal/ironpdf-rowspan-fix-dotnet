@@ -63,44 +63,43 @@ The project also demonstrates how to embed custom fonts into PDFs using IronPDF 
 
 ## 📂 Project Structure
 
+```
 IronPdfMVC
-│
 ├── Controllers
-│   └── HomeController.cs
+│ └── HomeController.cs
 │
 ├── Enums
-│   └── RowspanOutput.cs
+│ └── RowspanOutput.cs
 │
 ├── Factories
-│   └── InvoicePdfFactory.cs
+│ └── InvoicePdfFactory.cs
 │
 ├── Helpers
-│   ├── EnumExtensions.cs
-│   └── RowSpanExpander.cs   // Core logic that fixes rowspan misalignment
+│ ├── EnumExtensions.cs
+│ └── RowSpanExpander.cs // Core logic that fixes rowspan misalignment
 │
 ├── Models
-│   ├── ErrorViewModel.cs
-│   ├── InvoicePdfViewModel.cs
-│   └── PrintModel.cs
+│ ├── ErrorViewModel.cs
+│ ├── InvoicePdfViewModel.cs
+│ └── PrintModel.cs
 │
 ├── Views
-│   ├── Home
-│   │   ├── Index.cshtml
-│   │   └── Privacy.cshtml
-│   │
-│   └── Shared
-│       ├── _ViewImports.cshtml
-│       └── _ViewStart.cshtml
+│ ├── Home
+│ │ ├── Index.cshtml
+│ │ └── Privacy.cshtml
+│ │
+│ └── Shared
+│ ├── _ViewImports.cshtml
+│ └── _ViewStart.cshtml
 │
 ├── wwwroot
 │
 ├── appsettings.json
 ├── Program.cs
 │
-├── Raw_Rowspan.pdf        // PDF generated without fix
-├── Fixed_Rowspan.pdf      // PDF generated after applying rowspan fix
-
-
+├── Raw_Rowspan.pdf // PDF generated without fix
+└── Fixed_Rowspan.pdf // PDF generated after applying rowspan fix
+```
 ---
 
 ## 🚀 How It Works
