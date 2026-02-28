@@ -8,7 +8,7 @@ namespace IronPdfMVC.Models
         public RowspanOutput RowspanOutput { get; set; }
         public IList<SelectListItem> RowspanOutputOptions { get; set; } = new List<SelectListItem>();
         public bool UseCustomFont { get; set; }
-        public string SelectedFont { get; set; }
+        public string SelectedFont { get; set; } = IronSoftware.Drawing.FontTypes.Arial.Name;
 
         public List<string> CustomFonts { get; set; } = new List<string>
         {

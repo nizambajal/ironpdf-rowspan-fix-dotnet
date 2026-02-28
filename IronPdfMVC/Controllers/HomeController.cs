@@ -26,12 +26,15 @@ namespace IronPdfMVC.Controllers
             var viewModel = InvoicePdfFactory.GetInvoicePdfViewModel();
 
             #region Font embedding example
-            // inject font as base64 and @font-face before rendering
-            var fontPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "fonts", $"{model.SelectedFont}.ttf");
-            var fontBytes = System.IO.File.ReadAllBytes(fontPath);
-            var fontBase64 = Convert.ToBase64String(fontBytes);
+            string fontCss = string.Empty;
+            if (model.UseCustomFont)
+            {
+                // inject font as base64 and @font-face before rendering
+                var fontPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "fonts", $"{model.SelectedFont}.ttf");
+                var fontBytes = System.IO.File.ReadAllBytes(fontPath);
+                var fontBase64 = Convert.ToBase64String(fontBytes);
 
-            var fontCss = $@"
+                fontCss = $@"
                   @font-face {{
                     font-family: 'ToThePoint';
                     src: url('data:font/ttf;base64,{fontBase64}') format('truetype');
@@ -40,7 +43,8 @@ namespace IronPdfMVC.Controllers
                     font-display: swap;
                   }}
                   body, table, td, th {{ font-family: 'ToThePoint', sans-serif; }}
-            ";
+            "; 
+            }
 
             var normalCss = @"table, th, td {                            
                                 border: 1px solid black;
